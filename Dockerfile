@@ -11,7 +11,9 @@ RUN install -d -o squid -g squid \
 		/var/run/squid && \
 	chmod +x /usr/lib/squid/*
 
-COPY squid-log.conf /etc/squid/conf.d/
+COPY log.conf /etc/squid/conf.d/log.conf
+# COPY my.conf /etc/squid/conf.d/default.conf
+# RUN echo 'thr3a:$apr1$ZAAnUDIf$yvDygELIlnN/V.cOjw5.p.' > /etc/squid/passwd
 
 EXPOSE 3128
 USER squid
